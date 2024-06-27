@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bbi8g6rplhutv"]
+[gd_scene load_steps=14 format=3 uid="uid://bbi8g6rplhutv"]
 
 [ext_resource type="Texture2D" uid="uid://cstdojql2t0be" path="res://Richi_short-Sheet.png" id="1_fh8y4"]
 [ext_resource type="Script" path="res://AnimatedSprite2D.gd" id="2_7k6d5"]
@@ -39,6 +39,10 @@ region = Rect2(448, 0, 64, 64)
 atlas = ExtResource("1_fh8y4")
 region = Rect2(576, 0, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_gtcwn"]
+atlas = ExtResource("1_fh8y4")
+region = Rect2(0, 0, 64, 64)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_lpbjd"]
 animations = [{
 "frames": [{
@@ -72,6 +76,14 @@ animations = [{
 "loop": false,
 "name": &"Attack",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gtcwn")
+}],
+"loop": true,
+"name": &"None",
+"speed": 5.0
 }]
 
 [node name="Jugador" type="Node2D"]
@@ -80,7 +92,5 @@ animations = [{
 position = Vector2(610, 349)
 scale = Vector2(7.125, 7)
 sprite_frames = SubResource("SpriteFrames_lpbjd")
-animation = &"Attack"
-frame = 8
-frame_progress = 1.0
+animation = &"None"
 script = ExtResource("2_7k6d5")

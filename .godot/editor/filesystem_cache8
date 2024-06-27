@@ -1,4 +1,6 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1719482737
+::res://::1719493650
+AnimatedSprite2D.gd::GDScript::-1::1719483324::0::1::::<>AnimatedSprite2D<>::
 icon.svg::CompressedTexture2D::8748570441358156909::1719482621::1719482634::1::::<><>::
+jugador.tscn::PackedScene::2475140580070393843::1719483609::0::1::::<><>::uid://cstdojql2t0be::::res://Richi_short-Sheet.png<>res://AnimatedSprite2D.gd
 Richi_short-Sheet.png::CompressedTexture2D::6075671380254557106::1719482737::1719482737::1::::<><>::
