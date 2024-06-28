@@ -1,7 +1,61 @@
-[gd_scene load_steps=14 format=3 uid="uid://bbi8g6rplhutv"]
+[gd_scene load_steps=19 format=3 uid="uid://bbi8g6rplhutv"]
 
+[ext_resource type="AudioStream" uid="uid://gto2trnk62x7" path="res://Probatinas - Ataque Peliverde.wav" id="1_5ghxj"]
+[ext_resource type="Script" path="res://AnimationPlayer.gd" id="1_23vii"]
 [ext_resource type="Texture2D" uid="uid://cstdojql2t0be" path="res://Richi_short-Sheet.png" id="1_fh8y4"]
 [ext_resource type="Script" path="res://AnimatedSprite2D.gd" id="2_7k6d5"]
+
+[sub_resource type="Animation" id="Animation_wppoy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_yc3rp"]
+resource_name = "Attack"
+length = 0.959
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.35, 0.45, 0.52, 0.59, 0.64),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 9]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/AudioStreamPlayer2D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("1_5ghxj")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_im0qb"]
+_data = {
+"Attack": SubResource("Animation_yc3rp"),
+"RESET": SubResource("Animation_wppoy")
+}
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nt701"]
 atlas = ExtResource("1_fh8y4")
@@ -88,9 +142,23 @@ animations = [{
 
 [node name="Jugador" type="Node2D"]
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_im0qb")
+}
+script = ExtResource("1_23vii")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="AnimationPlayer"]
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(610, 349)
 scale = Vector2(7.125, 7)
 sprite_frames = SubResource("SpriteFrames_lpbjd")
 animation = &"None"
 script = ExtResource("2_7k6d5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(232, 141)
+texture = ExtResource("1_fh8y4")
+hframes = 10

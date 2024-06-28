@@ -1,6 +1,10 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1719493650
-AnimatedSprite2D.gd::GDScript::-1::1719483324::0::1::::<>AnimatedSprite2D<>::
+::res://::1719562945
+AnimatedSprite2D.gd::GDScript::-1::1719496931::0::1::::<>AnimatedSprite2D<>::
+AnimationPlayer.gd::GDScript::-1::1719522882::0::1::::<>AnimationPlayer<>::
+attack.mp3::AudioStreamMP3::1655991302262909548::1719562886::1719562886::1::::<><>::
 icon.svg::CompressedTexture2D::8748570441358156909::1719482621::1719482634::1::::<><>::
-jugador.tscn::PackedScene::2475140580070393843::1719483609::0::1::::<><>::uid://cstdojql2t0be::::res://Richi_short-Sheet.png<>res://AnimatedSprite2D.gd
+jugador.tscn::PackedScene::2475140580070393843::1719562746::0::1::::<><>::uid://gto2trnk62x7::::res://Probatinas - Ataque Peliverde.wav<>res://AnimationPlayer.gd<>uid://cstdojql2t0be::::res://Richi_short-Sheet.png<>res://AnimatedSprite2D.gd
+Probatinas - Ataque Peliverde.mp3::AudioStreamMP3::3414991939115123353::1719562928::1719562948::1::::<><>::
+Probatinas - Ataque Peliverde.wav::AudioStreamWAV::461255518300094866::1719562539::1719562539::1::::<><>::
 Richi_short-Sheet.png::CompressedTexture2D::6075671380254557106::1719482737::1719482737::1::::<><>::
